@@ -8,7 +8,7 @@ namespace LocalActivityLogger
         static void Main(string[] args)
         {
             var logger = new FileActivityLogger();
-            logger.StartMonitoring(@"C:\Users\Seesh\OneDrive\Documents\EDU\testing");
+            logger.StartMonitoring(@"Your/Path/File"); // Provide the path of the file to monitor
 
             Console.WriteLine("Press Enter to exit.");
             Console.ReadLine();
@@ -17,7 +17,7 @@ namespace LocalActivityLogger
 
     class FileActivityLogger
     {
-        private FileSystemWatcher watcher;
+        private FileSystemWatcher? watcher;
 
         public void StartMonitoring(string path)
         {
