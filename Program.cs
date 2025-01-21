@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 
 namespace LocalActivityLogger
@@ -13,6 +13,7 @@ namespace LocalActivityLogger
             Console.WriteLine("Press Enter to exit.");
             Console.ReadLine();
         }
+    }
 
     class FileActivityLogger
     {
@@ -24,7 +25,7 @@ namespace LocalActivityLogger
             {
                 Path = path,
                 NotifyFilter = NotifyFilters.FileName | NotifyFilters.LastWrite | NotifyFilters.Size,
-                Filter = "*.*" //use all file types
+                Filter = "*.*" // Monitor all file types
             };
 
             watcher.Changed += OnChanged;
@@ -51,6 +52,5 @@ namespace LocalActivityLogger
             Console.WriteLine($"[{DateTime.Now}] {message}");
             File.AppendAllText("activity_log.txt", $"[{DateTime.Now}] {message}{Environment.NewLine}");
         }
-    }
     }
 }
