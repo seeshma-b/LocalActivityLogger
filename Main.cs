@@ -3,7 +3,7 @@ using System.IO;
 
 namespace LocalActivityLogger
 {
-    class MainClass
+    class Program
     {
         static void Main(string[] args)
         {
