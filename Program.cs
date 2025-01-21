@@ -3,7 +3,7 @@ using System.IO;
 
 namespace LocalActivityLogger
 {
-    class MainClass
+    class Program
     {
         static void Main(string[] args)
         {
@@ -25,7 +25,7 @@ namespace LocalActivityLogger
             {
                 Path = path,
                 NotifyFilter = NotifyFilters.FileName | NotifyFilters.LastWrite | NotifyFilters.Size,
-                Filter = "*.*" // Monitor all file types
+                Filter = "*.*" // USe and monitor all file types
             };
 
             watcher.Changed += OnChanged;
